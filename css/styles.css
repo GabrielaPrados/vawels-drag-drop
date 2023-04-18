@@ -1,0 +1,299 @@
+/* FONTS */
+
+@font-face {
+    font-family: "Good Morning";
+    font-weight: 400; 
+    src: 
+        local("Good Morning"),
+        url("../assets/fonts/Good Morning.ttf") format("truetype");
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+/* font-family: 'Lobster', cursive; */
+
+/* VARIABLES */
+
+:root{
+    --vawelsBack: hsl(64, 64%, 96%);
+    --blue: hsl(206, 91%, 41%);
+    --lightBlue: hsl(204, 90%, 74%);
+    --yellow: hsl(50, 100%, 68%);
+    --yellowRGBA: rgba(255, 228, 92, .8);
+    --pink: hsl(342, 100%, 69%);
+}
+
+/* RESETS */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+main,
+main section article div{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+/* CLASES */
+
+.displayCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* TEMPLATE */
+
+body{
+    display: grid;
+    grid-template-areas:
+    "header div" 
+    "header main"
+    "header div2";
+    grid-template-columns: 80px auto;
+}
+
+header{
+    grid-area: header;
+}
+
+main{
+    grid-area: main;
+}
+
+.principalImg{
+    grid-area: div;
+}
+
+.buttonsDIV{
+    grid-area: div2;
+}
+
+/* STYLES */
+header{
+    background-color: var(--lightBlue);
+    height: 100vh;
+}
+
+h1{
+    font-family:  "Good Morning";
+    text-transform: uppercase;
+    color: var(--blue);
+    word-wrap: break-word;
+    text-align: center;
+    padding: 25vh 20px;
+}
+
+.principalImg{
+    height: 28vh;
+    padding: 20px;
+    background-color: var(--pink);
+}
+
+.principalImg img{
+    height: 100%;
+}
+
+main{
+    width: 100%;
+    height: 65vh;
+    margin: 0px auto;
+    flex-direction: column;
+    background-color: var(--yellowRGBA);
+    position: relative;
+}
+
+main section{
+    width: 100%;
+}
+
+
+
+main section article{
+    height: 200px;
+}
+
+main section article div{
+    width: 10vw;
+    height: 10vw;
+    min-width: 100px;
+    min-height: 100px;
+    background-color: var(--vawelsBack);
+    margin: 0 auto;
+    border: solid var(--blue);
+    overflow: hidden;
+}
+
+.buttonsDIV{
+    height: 7vh;
+    width: 100%;
+}
+
+.buttonsDIV button{
+    width: 50%;
+    height: 100%;
+    font-size: 2rem;
+    border: solid var(--blue);
+    color: var(--blue);
+    padding: 15px;
+}
+
+.buttonsDIV button:hover{
+    cursor: pointer;
+    border: solid var(--pink);
+    color: var(--pink);
+}
+
+
+/* INSTRUCTIONS */
+.instructions{
+    flex-direction: column;
+    width: 50%;
+    height: 50%;
+    background-color: var(--lightBlue);
+    border-radius: 15px;
+}
+
+.enterButton button{
+    width: 100%;
+}
+
+p{
+    font-family: 'Lobster', cursive;
+    font-size: min(1vw + 1rem);
+    text-align: center;
+    color: var(--blue);
+    font-weight: bold;
+    margin: 10px 0px;
+}
+
+.instructions p:first-child{
+    font-size: min(1vw + 1.8rem);
+    margin-bottom: 20px;
+    color: var(--vawelsBack);
+}
+
+.height{
+    height: 0px;
+    position: absolute;
+}
+
+
+/* ANIMATIONS */
+@keyframes show {
+    from{height: 0px;}
+    to{height: 100px;
+       width: auto;}
+}
+
+.animation1{
+    top:50vh;
+    left: 40vw;
+    animation: show 2s infinite;
+    animation-delay: 1s;
+}
+
+.animation2{
+    top:30vh;
+    left: 20vw;
+    animation: show 2s infinite;
+    animation-delay: 3s;
+}
+
+.animation3{
+    top:50vh;
+    left: 90vw;
+    animation: show 2s infinite;
+    animation-delay: 4s;
+}
+
+.animation4{
+    top:40px;
+    left: 50px;
+    animation: show 2s infinite;
+    animation-delay: 5s;
+}
+
+.animation5{
+    top:90px;
+    left: 30px;
+    animation: show 2s infinite;
+    animation-delay: 6s;
+}
+
+
+/* MEDIAS */
+@media (max-width: 680px) {
+    body{
+        grid-template-areas: "header""div""main""div2";
+        grid-template-columns: 100vw 100vw 100vw 100vw;
+
+    }
+
+    header,
+    main{
+        width: 100vw;
+        min-width: 300px;
+    }
+
+    header{
+        height: auto;
+    }
+
+    h1{
+        padding: 10px;
+        letter-spacing: 5px;
+    }
+
+   
+    main{
+        justify-content: flex-start;
+        min-height: 100vh;
+    }
+    
+    .principalImg img{
+        height: 80%;
+    }
+
+    .buttonsDIV{
+        height: auto;
+        flex-wrap: wrap;
+    }
+
+    .buttonsDIV button{
+        width: 100%;
+        padding: 5px;
+    }
+
+    #vawelsSection{
+        width: auto;
+        margin: 10% auto;
+        display: grid;
+        grid-template-areas: "section1 section2";
+        grid-template-columns: 100px 100px;
+        grid-template-rows: auto;
+        gap: 20px;
+        
+    }
+
+    #vawelsSection article:first-child{
+        grid-area: section1;
+        flex-wrap: wrap;
+    }
+
+    #vawelsSection article:last-child{
+        grid-area: section2;
+        flex-wrap: wrap;
+    }
+
+    #vawelsSection article div{
+        margin: 10px;
+    }
+
+}
+
+

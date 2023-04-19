@@ -137,14 +137,15 @@ main section article div{
     width: 50%;
     height: 100%;
     font-size: 2rem;
-    border: solid var(--blue);
+    box-shadow: 1px 1px 7px var(--blue) inset, -1px -1px 7px var(--blue) inset ;
     color: var(--blue);
     padding: 15px;
+    border: none;
 }
 
 .buttonsDIV button:hover{
     cursor: pointer;
-    border: solid var(--pink);
+    box-shadow: 1px 1px 5px var(--pink) inset, -1px -1px 5px var(--pink) inset ;
     color: var(--pink);
 }
 
@@ -183,6 +184,8 @@ p{
 }
 
 
+
+
 /* ANIMATIONS */
 @keyframes show {
     from{height: 0px;}
@@ -192,39 +195,73 @@ p{
 
 .animation1{
     top:50vh;
-    left: 40vw;
-    animation: show 2s infinite;
-    animation-delay: 1s;
+    left: 35vw;
+    animation: show 3s infinite;
+    animation-delay: .5s;
 }
 
 .animation2{
     top:30vh;
-    left: 20vw;
-    animation: show 2s infinite;
-    animation-delay: 3s;
+    left: 2vw;
+    animation: show 4s infinite;
+    animation-delay: 1.5s;
 }
 
 .animation3{
-    top:50vh;
-    left: 90vw;
-    animation: show 2s infinite;
-    animation-delay: 4s;
+    top:40vh;
+    left: 65vw;
+    animation: show 2.5s infinite;
+    animation-delay: 1s;
 }
 
 .animation4{
-    top:40px;
-    left: 50px;
-    animation: show 2s infinite;
-    animation-delay: 5s;
+    top:5vh;
+    left: 7vw;
+    animation: show 3.5s infinite;
+    animation-delay: 2.5s;
 }
 
 .animation5{
-    top:90px;
-    left: 30px;
+    top:10vh;
+    left: 70vw;
     animation: show 2s infinite;
-    animation-delay: 6s;
+    animation-delay: 2s;
 }
 
+.animation6{
+    top:30vh;
+    left: 85vw;
+    animation: show 3s infinite;
+    animation-delay: .5s;
+}
+
+.animation7{
+    top:10vh;
+    left: 55vw;
+    animation: show 4s infinite;
+    animation-delay: 2.5s;
+}
+
+.animation8{
+    top: 5vh;
+    left: 30vw;
+    animation: show 2.5s infinite;
+    animation-delay: 2s;
+}
+
+.animation9{
+    top:55vh;
+    left: 80vw;
+    animation: show 3.5s infinite;
+    animation-delay: 1.5s;
+}
+
+.animation10{
+    top:50vh;
+    left: 10vw;
+    animation: show 2s infinite;
+    animation-delay: 1s;
+}
 
 /* MEDIAS */
 @media (max-width: 680px) {
@@ -294,6 +331,23 @@ p{
         margin: 10px;
     }
 
+    /* INSTRUCTIONS */
+    
+    .instructions{
+        width: 90%;
+        margin-top: 25vh;
+    }
+
+    /* ANIMATIONS */
+    .enterVawels{
+        display: none;
+    }
+
 }
 
 
+@media (max-width: 800px){
+    .enterVawels > div{
+        display: none;
+    }
+}

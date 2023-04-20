@@ -1,0 +1,102 @@
+[
+    {
+        "img": "assets/imgs/a_bee.png",
+        "title": "Abeja"
+    },
+    {
+        "img": "assets/imgs/a_car.jpg",
+        "title": "Auto"
+    },
+    {
+        "img": "assets/imgs/a_plane.jpg",
+        "title": "Avión"
+    },
+    {
+        "img": "assets/imgs/a_rainbow.png",
+        "title": "Arcoiris"
+    },
+    {
+        "img": "assets/imgs/a_tree.jpg",
+        "title": "Arbol"
+    },
+    {
+        "img": "assets/imgs/e_broom.webp",
+        "title": "Escoba"
+    },
+    {
+        "img": "assets/imgs/e_elephant.jpg",
+        "title": "Elefante"
+    },
+    {
+        "img": "assets/imgs/e_leadder.jpg",
+        "title": "Escalera"
+    },
+    {
+        "img": "assets/imgs/e_patty.jpg",
+        "title": "Empanada"
+    },
+    {
+        "img": "assets/imgs/e_star.png",
+        "title": "Estrella"
+    },
+    {
+        "img": "assets/imgs/i_church.png",
+        "title": "Iglesia"
+    },
+    {
+        "img": "assets/imgs/i_iguana.jpg",
+        "title": "Iguana"
+    },
+    {
+        "img": "assets/imgs/i_island.jpg",
+        "title": "Isla"
+    },
+    {
+        "img": "assets/imgs/i_magnet.jpg",
+        "title": "Iman"
+    },
+    {
+        "img": "assets/imgs/i_printer.png",
+        "title": "Impresora"
+    },
+    {
+        "img": "assets/imgs/o_bear.webp",
+        "title": "Oso"
+    },
+    {
+        "img": "assets/imgs/o_ear.png",
+        "title": "Oreja"
+    },
+    {
+        "img": "assets/imgs/o_eye.png",
+        "title": "Ojo"
+    },
+    {
+        "img": "assets/imgs/o_pot.png",
+        "title": "Olla"
+    },
+    {
+        "img": "assets/imgs/o_sheep.webp",
+        "title": "Oveja"
+    },
+    {
+        "img": "assets/imgs/u_grapes.webp",
+        "title": "Uva"
+    },
+    {
+        "img": "assets/imgs/u_nail.webp",
+        "title": "Uña"
+    },
+    {
+        "img": "assets/imgs/u_one.png",
+        "title": "Uno"
+    },
+    {
+        "img": "assets/imgs/u_unicorn.png",
+        "title": "Unicornio"
+    },
+    {
+        "img": "assets/imgs/u_universe.jpg",
+        "title": "Universo"
+    }
+]

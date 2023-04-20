@@ -55,6 +55,7 @@ body{
     "header main"
     "header div2";
     grid-template-columns: 80px auto;
+    grid-template-rows: auto auto auto;
 }
 
 header{
@@ -100,7 +101,8 @@ h1{
 
 main{
     width: 100%;
-    height: 65vh;
+    height: auto;
+    min-height: 65vh;
     margin: 0px auto;
     flex-direction: column;
     background-color: var(--yellowRGBA);
@@ -111,10 +113,9 @@ main section{
     width: 100%;
 }
 
-
-
 main section article{
     height: 200px;
+    margin: 2vw auto;
 }
 
 main section article div{
@@ -127,6 +128,7 @@ main section article div{
     border: solid var(--blue);
     overflow: hidden;
 }
+
 
 .buttonsDIV{
     height: 7vh;
@@ -268,11 +270,12 @@ p{
     body{
         grid-template-areas: "header""div""main""div2";
         grid-template-columns: 100vw 100vw 100vw 100vw;
-
+        grid-template-rows: auto auto auto auto;
     }
 
     header,
     main{
+        height: auto;
         width: 100vw;
         min-width: 300px;
     }
@@ -285,17 +288,12 @@ p{
         padding: 10px;
         letter-spacing: 5px;
     }
-
-   
-    main{
-        justify-content: flex-start;
-        min-height: 100vh;
-    }
     
     .principalImg img{
         height: 80%;
     }
 
+  
     .buttonsDIV{
         height: auto;
         flex-wrap: wrap;
@@ -307,11 +305,12 @@ p{
     }
 
     #vawelsSection{
-        width: auto;
+        width: 100%;
+        height: auto;
         margin: 10% auto;
         display: grid;
         grid-template-areas: "section1 section2";
-        grid-template-columns: 100px 100px;
+        grid-template-columns: 100fr 100fr;
         grid-template-rows: auto;
         gap: 20px;
         
@@ -320,11 +319,13 @@ p{
     #vawelsSection article:first-child{
         grid-area: section1;
         flex-wrap: wrap;
+        height: auto;
     }
 
     #vawelsSection article:last-child{
         grid-area: section2;
         flex-wrap: wrap;
+        height: auto;
     }
 
     #vawelsSection article div{
@@ -350,4 +351,31 @@ p{
     .enterVawels > div{
         display: none;
     }
+}
+
+
+/* classes JS */
+
+.displayIMGS div{
+    background-color: white;
+}
+
+.displayIMGS img{
+    width: 100%;
+}
+
+.imgObject{
+    width: 100%;
+    text-align: center;
+    color: var(--blue);
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 0px auto;
+    letter-spacing: 5px;
+}
+
+p::first-letter{
+    color: var(--pink);
+    font-size: 2rem;
+    font-weight: bold;
 }

@@ -121,8 +121,8 @@ main section article{
 main section article div{
     width: 10vw;
     height: 10vw;
-    min-width: 100px;
-    min-height: 100px;
+    min-width: 120px;
+    min-height: 120px;
     background-color: var(--vawelsBack);
     margin: 0 auto;
     border: solid var(--blue);
@@ -278,10 +278,11 @@ p{
         height: auto;
         width: 100vw;
         min-width: 300px;
+        
     }
 
-    header{
-        height: auto;
+    main{
+        min-height: 100vh;
     }
 
     h1{
@@ -318,14 +319,15 @@ p{
 
     #vawelsSection article:first-child{
         grid-area: section1;
-        flex-wrap: wrap;
-        height: auto;
     }
 
     #vawelsSection article:last-child{
         grid-area: section2;
+    }
+    #vawelsSection article{
         flex-wrap: wrap;
         height: auto;
+        max-width: 120px;
     }
 
     #vawelsSection article div{
@@ -336,7 +338,6 @@ p{
     
     .instructions{
         width: 90%;
-        margin-top: 25vh;
     }
 
     /* ANIMATIONS */
@@ -354,7 +355,7 @@ p{
 }
 
 
-/* classes JS */
+/* js css */
 
 .displayIMGS div{
     background-color: white;
@@ -364,18 +365,20 @@ p{
     width: 100%;
 }
 
-.imgObject{
-    width: 100%;
-    text-align: center;
-    color: var(--blue);
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin: 0px auto;
-    letter-spacing: 5px;
+
+/* classes JS */
+
+.displayNone{
+    display: none;
 }
 
-p::first-letter{
+
+.displayIMGS p::first-letter{
     color: var(--pink);
     font-size: 2rem;
     font-weight: bold;
+}
+
+.cursorPointer{
+    cursor: pointer;
 }

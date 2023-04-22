@@ -48,7 +48,55 @@ function displayingImgs(arr, elem, selector) {
     elem = document.querySelector(selector)
     elem.innerHTML = arr.map(el => {
         return `
-        <div id="drag_${el.img[12]}"><img src="${el.img}" alt="${el.img[12]}"></div>
+        <div id="${el.img[12]}" class="cursorPointer displayCenter"><img src="${el.img}" alt="${el.title}" class="dragElement"></div>
         `
-    } ).join("")
+    }).join("")
+    arrDB = []
+}
+
+
+/* drag and drop */
+
+const dragBegins = (t, e) => {
+    let img;
+    console.log(t);
+    if (t.src[0] === "h") {
+        const eliminate = t.ownerDocument.location.origin;
+        img = t.src.replace(eliminate + "/", "") 
+    } else {
+        img = t.src;
+    } 
+    e.dataTransfer.setData("text", img);
+};
+
+
+
+const dropIMG = (t, e) => {
+    const newImg = e.dataTransfer.getData("text");
+    const object = displayDB.find(elem => elem.img === newImg)
+    let id;
+    if (t.tagName === "IMG" && t.alt === newImg[12]) {
+        id = t.alt
+        t.src = newImg 
+        t.style.width = "100%"
+        t.alt = object.title
+    } else if (t.tagName === "DIV" && t.id === newImg[12]) {
+        id= t.id
+        t.firstChild.src = newImg
+        t.firstChild.style.width = "100%"
+        t.alt = object.title
+    }
+    
+    createParagraph(id)
+}
+
+function createParagraph(id) {
+    const imgContainer = document.querySelectorAll(".displayIMGS div")
+    imgContainer.forEach(div => {
+        if (div.id === id) {
+            div.innerHTML = `<p>${div.firstChild.alt}</p>`    
+        }
+    } )
+
+    
 }

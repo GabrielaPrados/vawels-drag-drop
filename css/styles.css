@@ -1,4 +1,4 @@
-/* FONTS */
+/*----------------------- FONTS --------------------------*/
 
 @font-face {
     font-family: "Good Morning";
@@ -11,7 +11,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 /* font-family: 'Lobster', cursive; */
 
-/* VARIABLES */
+/* --------------------VARIABLES ---------------------------*/
 
 :root{
     --vawelsBack: hsl(64, 64%, 96%);
@@ -22,7 +22,7 @@
     --pink: hsl(342, 100%, 69%);
 }
 
-/* RESETS */
+/*-------------------- RESETS -----------------------------*/
 
 *{
     margin: 0;
@@ -31,14 +31,7 @@
     
 }
 
-main,
-main section article div{
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-}
-
-/* CLASES */
+/* ---------------------CLASES ------------------------------*/
 
 .displayCenter{
     display: flex;
@@ -46,7 +39,7 @@ main section article div{
     align-items: center;
 }
 
-/* TEMPLATE */
+/*----------------------- TEMPLATE-------------------------- */
 
 body{
     display: grid;
@@ -74,6 +67,8 @@ main{
     grid-area: div2;
 }
 
+/* /////////////////////////////////////////////////////////// */
+
 /* STYLES */
 header{
     background-color: var(--lightBlue);
@@ -97,6 +92,13 @@ h1{
 
 .principalImg img{
     height: 100%;
+}
+
+main,
+main section article div{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
 }
 
 main{
@@ -128,7 +130,6 @@ main section article div{
     border: solid var(--blue);
     overflow: hidden;
 }
-
 
 .buttonsDIV{
     height: 7vh;
@@ -186,9 +187,7 @@ p{
 }
 
 
-
-
-/* ANIMATIONS */
+/* ----------------------------ANIMATIONS ----------------------------*/
 @keyframes show {
     from{height: 0px;}
     to{height: 100px;
@@ -265,7 +264,7 @@ p{
     animation-delay: 1s;
 }
 
-/* MEDIAS */
+/* ------------------------------MEDIAS ----------------------------*/
 @media (max-width: 680px) {
     body{
         grid-template-areas: "header""div""main""div2";
@@ -335,7 +334,6 @@ p{
     }
 
     /* INSTRUCTIONS */
-    
     .instructions{
         width: 90%;
     }
@@ -344,7 +342,6 @@ p{
     .enterVawels{
         display: none;
     }
-
 }
 
 
@@ -355,7 +352,7 @@ p{
 }
 
 
-/* js css */
+/*-------------------------------- js css ---------------------------------*/
 
 .displayIMGS div{
     background-color: white;
@@ -371,7 +368,6 @@ p{
 .displayNone{
     display: none;
 }
-
 
 .displayIMGS p::first-letter{
     color: var(--pink);

@@ -14,19 +14,7 @@ document.addEventListener("click", (e) => {
         instructions.classList.add("displayNone")
         vawelsSection.classList.remove("displayNone")
         vawelsSection.removeAttribute("style", "display:none")
-
-        vawelsSection.innerHTML = `
-        <article class="displayCenter vawelsArticle">
-                <div id="a" class="dropZone"><img src="assets/imgs/vowels_imgs/a_vowel.jpg" alt="a" class="dropZone"></div>
-                <div id="e" class="dropZone"><img src="assets/imgs/vowels_imgs/e_vowel.jpg" alt="e" class="dropZone"></div>
-                <div id="i" class="dropZone"><img src="assets/imgs/vowels_imgs/i_vowel.jpg" alt="i" class="dropZone"></div>
-                <div id="o" class="dropZone"><img src="assets/imgs/vowels_imgs/o_vowel.jpg" alt="o" class="dropZone"></div>
-                <div id="u" class="dropZone"><img src="assets/imgs/vowels_imgs/u_vowel.jpg" alt="u" class="dropZone"></div>
-            </article>
-            <article class="displayIMGS displayCenter">
-                
-            </article>
-        `
+        displayIndex(vawelsSection)/* display vawels and objects */
         gettingArray()
     }
     
@@ -47,25 +35,13 @@ document.addEventListener("click", (e) => {
     /* resetting elements */
     if (t.classList.contains("tryAgain")) {
         const vawelsSection = document.querySelector("#vawelsSection")
-        vawelsSection.innerHTML = `
-        <article class="displayCenter vawelsArticle">
-                <div id="a" class="dropZone"><img src="assets/imgs/vowels_imgs/a_vowel.jpg" alt="a" class="dropZone"></div>
-                <div id="e" class="dropZone"><img src="assets/imgs/vowels_imgs/e_vowel.jpg" alt="e" class="dropZone"></div>
-                <div id="i" class="dropZone"><img src="assets/imgs/vowels_imgs/i_vowel.jpg" alt="i" class="dropZone"></div>
-                <div id="o" class="dropZone"><img src="assets/imgs/vowels_imgs/o_vowel.jpg" alt="o" class="dropZone"></div>
-                <div id="u" class="dropZone"><img src="assets/imgs/vowels_imgs/u_vowel.jpg" alt="u" class="dropZone"></div>
-            </article>
-            <article class="displayIMGS displayCenter">
-                
-            </article>
-        `
-        
+        displayIndex(vawelsSection)/* display vawels and objects */
         gettingArray()
     } 
 })
 
 
-/* drag and drop */
+/*-------------------------------- drag and drop ----------------------------------*/
 
 /* prevent default */
 ;["dragenter", "dragleave", "dragover", "drop"].forEach(ev => {
@@ -79,15 +55,14 @@ document.addEventListener("click", (e) => {
 
 document.addEventListener("dragstart", e => {
     const t = e.target
-
     if (t.classList.contains("dragElement")) {
-        dragBegins(t, e)
+        dragBegins(t, e)/* fucntion for event dragstar which get and set img src */
     }
 })
 
 document.addEventListener("drop", e => {
     const t = e.target
     if (t.classList.contains("dropZone")) {
-        dropIMG(t, e)
+        dropIMG(t, e)/* function to be used in drop event which get src img and create a paragrah with object name inide div  */
     }
 })

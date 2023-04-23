@@ -12,7 +12,9 @@ function ajax(url, metodo) {
     return xhr
 }
 
-/* ----------------------------------------------------------------------------------------------------------------- */
+
+
+/* ---------------------------------------------GETTING DB--------------------------------------------------- */
 const db = ajax("db.json")
 
 /* getting db */
@@ -23,6 +25,23 @@ db.addEventListener("load", () => {
     }
 })
 
+
+/* --------------------------------------------------------------------------------------------------------------------- */
+/* display vawels and objects */
+function displayIndex(elem) {
+    elem.innerHTML = `
+    <article class="displayCenter vawelsArticle">
+            <div id="a" class="dropZone"><img src="assets/imgs/vowels_imgs/a_vowel.jpg" alt="a" class="dropZone"></div>
+            <div id="e" class="dropZone"><img src="assets/imgs/vowels_imgs/e_vowel.jpg" alt="e" class="dropZone"></div>
+            <div id="i" class="dropZone"><img src="assets/imgs/vowels_imgs/i_vowel.jpg" alt="i" class="dropZone"></div>
+            <div id="o" class="dropZone"><img src="assets/imgs/vowels_imgs/o_vowel.jpg" alt="o" class="dropZone"></div>
+            <div id="u" class="dropZone"><img src="assets/imgs/vowels_imgs/u_vowel.jpg" alt="u" class="dropZone"></div>
+        </article>
+        <article class="displayIMGS displayCenter">
+            
+        </article>
+    `
+}
 
 /* displaing 5 random imgs in a diferent position */
 function gettingArray(){
@@ -41,9 +60,10 @@ function gettingArray(){
            }   
         }
     }
-    displayingImgs(arrDB, "article", ".displayIMGS")
+    displayingImgs(arrDB, "article", ".displayIMGS")/* getting article "displayIMGS" and  creating divs to show objects*/
 }
 
+/* creating divs to show objects */
 function displayingImgs(arr, elem, selector) {
     elem = document.querySelector(selector)
     elem.innerHTML = arr.map(el => {
@@ -54,12 +74,11 @@ function displayingImgs(arr, elem, selector) {
     arrDB = []
 }
 
+/*------------------------------- drag and drop ---------------------------------------*/
 
-/* drag and drop */
-
+/* fucntion for event dragstar which get and set img src */
 const dragBegins = (t, e) => {
     let img;
-    console.log(t);
     if (t.src[0] === "h") {
         const eliminate = t.ownerDocument.location.origin;
         img = t.src.replace(eliminate + "/", "") 
@@ -69,27 +88,26 @@ const dragBegins = (t, e) => {
     e.dataTransfer.setData("text", img);
 };
 
-
-
+/* function to be used in drop event which get src img */
 const dropIMG = (t, e) => {
     const newImg = e.dataTransfer.getData("text");
-    const object = displayDB.find(elem => elem.img === newImg)
+    const object = displayDB.find(elem => elem.img === newImg)/* search in db the element to get "title" */
     let id;
-    if (t.tagName === "IMG" && t.alt === newImg[12]) {
+    if (t.tagName === "IMG" && t.alt === newImg[12]) {/* if drop is over the img */
         id = t.alt
         t.src = newImg 
         t.style.width = "100%"
         t.alt = object.title
-    } else if (t.tagName === "DIV" && t.id === newImg[12]) {
+    } else if (t.tagName === "DIV" && t.id === newImg[12]) {/* if drop is over the div */
         id= t.id
         t.firstChild.src = newImg
         t.firstChild.style.width = "100%"
         t.alt = object.title
     }
-    
     createParagraph(id)
 }
 
+/* creat a paragraph inside div which contained object */
 function createParagraph(id) {
     const imgContainer = document.querySelectorAll(".displayIMGS div")
     imgContainer.forEach(div => {
@@ -97,6 +115,4 @@ function createParagraph(id) {
             div.innerHTML = `<p>${div.firstChild.alt}</p>`    
         }
     } )
-
-    
 }
